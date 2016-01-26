@@ -1,5 +1,7 @@
-
+var timeoutID;   
 function showLimerick(){
+  //clear the timeout 
+  window.clearTimeout(timeoutID);
   //retrieve the name that was entered
   var name = document.getElementById("name"); 
    $("#text").empty();      // clear any previous limerick or message ;
@@ -42,5 +44,6 @@ var limerick = {
 };
 
 $(document).ready(function(){
- /* showLimerick();*/
+  // set a timer and remind the user to enter their name if they haven't when a few seconds have passed - use showLImerick to do this
+  timerID = window.setTimeout(showLimerick, 2000);
 });
